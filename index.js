@@ -10,8 +10,8 @@ const tobeprocessed = tobe.replace(new RegExp("<(/?)[-A-Za-z0-9]+:",'g'),'<$1').
 const schema = {};
 const options = {ignoreDoctype:true};
 
-const filterAndPrintNotPresent = (filter, result)=>{
-    console.log('\n>>>',filter.toUpperCase(), '\n');
+const filterAndPrintNotPresent = (filter, fileName, result)=>{
+    console.log('\n>>>',filter.toUpperCase(), fileName, '\n');
     result.filter(r=>r.message.endsWith(filter)).map(a=>a.path).forEach(a=>console.log(a));
 }
 
@@ -21,8 +21,8 @@ const filterAndPrintDifferenceInValue = (filter, result) =>{
 }
 
 diffAsXml(asis, tobeprocessed, schema, options, (result) => {
-    filterAndPrintNotPresent('not present in rhs', result);
-    filterAndPrintNotPresent('not present in lhs', result);
+    filterAndPrintNotPresent('not present in rhs', tobeFileName, result);
+    filterAndPrintNotPresent('not present in lhs', asisFileName, result);
     filterAndPrintDifferenceInValue('difference in element value', result);
 });
 
