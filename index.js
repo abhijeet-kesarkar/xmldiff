@@ -18,7 +18,7 @@ diffAsXml(asis, tobeprocessed, schema, options, (result) => {
     filterAndPrint('not present in rhs', result)
     filterAndPrint('not present in lhs', result)
 
-    console.log('\n','different')
+    console.log('\n','different lhs rhs')
     result.filter(a=>a.resultType==='difference in element value').map(a=>a.message.replace('field ','').replace('has lhs value ', '\t').replace('and rhs value ', '\t')).forEach(a=>console.log(a))
 });
 
