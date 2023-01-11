@@ -1,14 +1,11 @@
 {
   "name": "xmldiff",
   "version": "1.0.0",
-  "description": "",
+  "description": "difference between two xmls",
   "main": "index.js",
   "bin":"run.sh",
   "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
+  "author": "abhijeet kesarkar",
   "license": "ISC",
   "dependencies": {
     "diff-js-xml": "^1.0.6"
