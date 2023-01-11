@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "difference between two xmls",
   "main": "index.js",
-  "bin":"run.sh",
+  "bin":"index.js",
   "type": "module",
   "author": "abhijeet kesarkar",
   "license": "ISC",

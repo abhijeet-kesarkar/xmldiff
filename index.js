@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { diffAsXml } from 'diff-js-xml';
 import { promises as fs } from 'fs';
 
