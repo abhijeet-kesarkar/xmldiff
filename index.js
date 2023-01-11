@@ -1,9 +1,11 @@
 import { diffAsXml } from 'diff-js-xml';
 import { promises as fs } from 'fs';
 
+const asisFileName = process.argv[2];
+const tobeFileName = process.argv[3];
 
-const asis = await fs.readFile('/Users/kersarkaa/work/auspost/postlpus/Secure Collect/services/1200/logs/ASIS-POSLOG-TC1200-ReceivedAtPO.xml', { encoding: 'utf8' });
-const tobe = await fs.readFile('/Users/kersarkaa/work/auspost/postlpus/Secure Collect/services/1200/logs/TOBE-POSLOG-TC1200-ReceivedAtPO-20230111.xml', { encoding: 'utf8' });
+const asis = await fs.readFile(asisFileName, { encoding: 'utf8' });
+const tobe = await fs.readFile(tobeFileName, { encoding: 'utf8' });
 const tobeprocessed = tobe.replace(new RegExp("<(/?)[-A-Za-z0-9]+:",'g'),'<$1').replace(new RegExp('xmlns:.*"','g'),'')
 const schema = {};
 const options = {ignoreDoctype:true};
